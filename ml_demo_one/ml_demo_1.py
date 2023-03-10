@@ -18,8 +18,7 @@ formula = "boot_size ~ harness_size"
 # Create the model, but don't train it yet 
 model = smfapi.ols(formula = formula, data = dataset1)
 
-# Note that we have created our model but it does not 
-# have internal parameters set yet
+# Note that we have created our model but it does not have internal parameters set yet
 if not hasattr(model, 'params'):
     print("Model selected but it does not have parameters set. We need to train it!")
 
@@ -32,13 +31,13 @@ if not hasattr(model, 'params'):
 fitted_model = model.fit()
 
 
-# Print information about our model now it has been fit
+# Print information about our model now that it has been fit
 print("The following model parameters have been found:\n" +
         f"Line Intercept: {fitted_model.params[0]}\n" +
         f"Line slope: {fitted_model.params[1]}\n")
 
 # harness_size states the size of the harness we are interested in
-# 52.5 can be changed 
+# (52.5 can be changed)
 harness_size = { 'harness_size' : [52.5] }
 
 # Use the model to predict what size of boots the dog will fit
